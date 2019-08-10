@@ -1,0 +1,23 @@
+{
+  "name": "carolina-mary-front-end",
+  "version": "1.0.0",
+  "description": "carolina-mary is simple project based on Vue.js & NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoheirkhonyagar/carolina-mary.git"
+  },
+  "keywords": [
+    "carolina",
+    "mary"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoheirkhonyagar/carolina-mary/issues"
+  },
+  "homepage": "https://github.com/zoheirkhonyagar/carolina-mary#readme"
+}
