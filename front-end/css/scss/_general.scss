@@ -1,0 +1,108 @@
+body {
+	font: {
+		family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+			Sans-Serif;
+		size: map-get($map: $fonts, $key: bg);
+	}
+	@include colors(
+		$bg: darken(map-get($colors, bgBaseForm), $amount: 10%),
+		$text: map-get($colors, mainText)
+	);
+}
+
+a,
+ul {
+	list-style: none;
+	text-decoration: none;
+	color: skyblue;
+}
+
+li {
+	padding-right: 10px;
+}
+
+.container {
+	@include flex-container();
+}
+
+.row {
+	margin: $margin;
+	h1 {
+		margin-left: $margin;
+	}
+}
+
+form {
+	padding: 20px;
+	@include colors(
+		$bg: map-get($colors, bgBaseForm),
+		$text: map-get($colors, textBaseForm)
+	);
+	h2 {
+		text-align: center;
+	}
+	@media (max-width: 60em) and (min-width: 40em) {
+		width: 500px;
+	}
+}
+
+.form-group {
+	margin: $margin;
+	input {
+		width: -webkit-fill-available;
+		margin-top: 10px;
+		padding: 10px;
+	}
+
+	@media (max-width: 40em) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.signUp {
+	margin: $margin;
+	@include colors($bg: #47cf73, $text: #000000);
+	cursor: pointer;
+	font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+		Sans-Serif;
+	line-height: 1.2;
+	display: inline-flex;
+	padding: 10px 16px;
+	border-radius: 4px;
+	border: 3px solid transparent;
+}
+
+.login {
+	margin: $margin;
+	@include flex-container(flex, wrap, space-around, center);
+
+	.login__item {
+		margin: $margin;
+		@include colors($bg: #444857, $text: #ffffff);
+		font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+			Sans-Serif;
+		line-height: 1.2;
+		display: inline-flex;
+		padding: 10px 16px;
+		border-radius: 4px;
+		border: 3px solid transparent;
+		cursor: pointer;
+	}
+}
+
+.invalid-feedback {
+	@include colors($text: red);
+	font-size: map-get($map: $fonts, $key: alert);
+	margin-top: 5px;
+}
+
+.error {
+	color: map-get($map: $colors, $key: error);
+	border: 1px solid map-get($map: $colors, $key: error);
+}
+
+.correct {
+	color: map-get($map: $colors, $key: correct);
+	border: 1px solid map-get($map: $colors, $key: correct);
+}
