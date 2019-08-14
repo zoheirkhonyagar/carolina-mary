@@ -23,6 +23,11 @@ body {
 	}
 }
 
+.van {
+	display: flex;
+	margin-top: $margin;
+}
+
 form {
 	padding: 20px;
 	@include colors(

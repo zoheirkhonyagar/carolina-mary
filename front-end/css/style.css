@@ -6,7 +6,7 @@ ul {
 }
 
 li {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 body {
@@ -38,6 +38,13 @@ body {
 
 .row h1 {
   margin-left: 20px;
+}
+
+.van {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
 }
 
 form {
