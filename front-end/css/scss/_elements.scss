@@ -1,3 +1,10 @@
-a {
+a,
+ul {
 	list-style: none;
+	text-decoration: none;
+	color: skyblue;
+}
+
+li {
+	padding-right: 10px;
 }

@@ -5,20 +5,9 @@ body {
 		size: map-get($map: $fonts, $key: bg);
 	}
 	@include colors(
-		$bg: darken(map-get($colors, bgBaseForm), $amount: 10%),
+		$bg: darken(map-get($colors, bgBaseForm), $amount: 2%),
 		$text: map-get($colors, mainText)
 	);
-}
-
-a,
-ul {
-	list-style: none;
-	text-decoration: none;
-	color: skyblue;
-}
-
-li {
-	padding-right: 10px;
 }
 
 .container {

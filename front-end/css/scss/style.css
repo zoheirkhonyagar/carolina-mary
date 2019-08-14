@@ -1,0 +1,136 @@
+a,
+ul {
+  list-style: none;
+  text-decoration: none;
+  color: skyblue;
+}
+
+li {
+  padding-right: 10px;
+}
+
+body {
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+  font-size: 13px;
+  background-color: #212229;
+  color: #ffffff;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.row {
+  margin: 20px;
+}
+
+.row h1 {
+  margin-left: 20px;
+}
+
+form {
+  padding: 20px;
+  background-color: #25272f;
+  color: oldlace;
+}
+
+form h2 {
+  text-align: center;
+}
+
+@media (max-width: 60em) and (min-width: 40em) {
+  form {
+    width: 500px;
+  }
+}
+
+.form-group {
+  margin: 20px;
+}
+
+.form-group input {
+  width: -webkit-fill-available;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+@media (max-width: 40em) {
+  .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.signUp {
+  margin: 20px;
+  background-color: #47cf73;
+  color: #000000;
+  cursor: pointer;
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+  line-height: 1.2;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 3px solid transparent;
+}
+
+.login {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .login__item {
+  margin: 20px;
+  background-color: #444857;
+  color: #ffffff;
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+  line-height: 1.2;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.error {
+  color: red;
+  border: 1px solid red;
+}
+
+.correct {
+  color: #47cf73;
+  border: 1px solid #47cf73;
+}
+/*# sourceMappingURL=style.css.map */
