@@ -32,6 +32,13 @@ body {
   width: 90%;
 }
 
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
 .row {
   margin: 20px;
 }

@@ -16,6 +16,11 @@ body {
 	width: 90%;
 }
 
+.nav {
+	display: flex;
+	margin-top: 20px;
+}
+
 .row {
 	margin: $margin;
 	h1 {
