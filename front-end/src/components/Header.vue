@@ -1,5 +1,5 @@
 <template>
-    <ul class="vav nav-pills">
+    <ul class="nav">
         <router-link to="/" tag="li" active-class="active" exact>
             <a>Home</a>
         </router-link>

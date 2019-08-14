@@ -12,6 +12,8 @@ body {
 
 .container {
 	@include flex-container();
+	margin: 0 auto;
+	width: 560px;
 }
 
 .row {

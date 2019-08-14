@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h1>Sign up</h1>
         <div class="container">
             <div class="row">
+                <h1>Sign up</h1>
                 <form>
                     <h2>User Form</h2>
                     <div class="form-group">

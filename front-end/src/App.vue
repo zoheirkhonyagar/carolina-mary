@@ -1,12 +1,10 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <router-view name="header-top"></router-view>
-            <transition name="slide" mode="out-in">
-                <router-view></router-view>
-            </transition>
-            <router-view name="header-bottom"></router-view>
-        </div>
+    <div>
+        <router-view name="header-top"></router-view>
+        <transition name="slide" mode="out-in">
+            <router-view></router-view>
+        </transition>
+        <router-view name="header-bottom"></router-view>
     </div>
 </template>
 
