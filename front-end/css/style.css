@@ -2,7 +2,7 @@ a,
 ul {
   list-style: none;
   text-decoration: none;
-  color: skyblue;
+  color: blue;
 }
 
 li {
@@ -12,8 +12,8 @@ li {
 body {
   font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
   font-size: 13px;
-  background-color: #212229;
-  color: #ffffff;
+  background-color: #c4c3bc;
+  color: darkslategray;
 }
 
 .container {
@@ -49,8 +49,8 @@ body {
 
 form {
   padding: 20px;
-  background-color: #25272f;
-  color: oldlace;
+  background-color: #cecdc7;
+  color: darkslategray;
 }
 
 form h2 {

@@ -5,7 +5,7 @@ body {
 		size: map-get($map: $fonts, $key: bg);
 	}
 	@include colors(
-		$bg: darken(map-get($colors, bgBaseForm), $amount: 2%),
+		$bg: darken(map-get($colors, bgBaseForm), $amount: 4%),
 		$text: map-get($colors, mainText)
 	);
 }
