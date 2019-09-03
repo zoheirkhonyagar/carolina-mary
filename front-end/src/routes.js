@@ -1,4 +1,4 @@
-import User from './components/user/User.vue';
+import User from './components/User.vue';
 import SignUp from './components/SignUp.vue';
 import Home from './components/Home.vue';
 import Header from './components/Header.vue';

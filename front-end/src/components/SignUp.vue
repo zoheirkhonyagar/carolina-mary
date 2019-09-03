@@ -14,6 +14,7 @@
                             id="fname"
                             placeholder="First Name"
                             @blur="validateFirstName"
+                            :class="{'correct': !alertForFirstName, 'error': alertForFirstName}"
                         />
                         <div
                             class="invalid-feedback"
@@ -46,6 +47,21 @@
                             @blur="validateEmail"
                         />
                         <div class="invalid-feedback" v-if="alertForMail">Enter a valid email</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <br />
+                        <input
+                            type="username"
+                            class="form-control"
+                            id="username"
+                            placeholder="Username"
+                            @blur="validateUser"
+                        />
+                        <div
+                            class="invalid-feedback"
+                            v-if="alertForUser"
+                        >Choose a username beetween 8 and 15 characters</div>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -132,6 +148,7 @@ export default {
                 fname: "",
                 lname: "",
                 email: "",
+                username: "",
                 password: "",
                 age: ""
             },
@@ -140,9 +157,12 @@ export default {
             fillFirstName: false,
             alertForLastName: false,
             alertForMail: false,
+            alertForUser: false,
             alertForPassword: false,
             alertForConfirmPassword: false,
-            alertForAge: false
+            alertForAge: false,
+            attachCorrect: false,
+            attachError: false
         };
     },
     methods: {
@@ -155,12 +175,8 @@ export default {
 
             if (!re.test(fname.value)) {
                 this.alertForFirstName = true;
-                fname.classList.remove("correct");
-                fname.classList.add("error");
             } else {
                 this.alertForFirstName = false;
-                fname.classList.remove("error");
-                fname.classList.add("correct");
             }
         },
         validateLastName() {
@@ -189,6 +205,20 @@ export default {
                 this.alertForMail = false;
                 email.classList.remove("error");
                 email.classList.add("correct");
+            }
+        },
+        validateUser() {
+            const user = document.getElementById("username");
+            const re = /^[a-zA-Z0-9]{8,15}$/;
+
+            if (!re.test(user.value)) {
+                this.alertForUser = true;
+                user.classList.remove("correct");
+                user.classList.add("error");
+            } else {
+                this.alertForUser = false;
+                user.classList.remove("error");
+                user.classList.add("correct");
             }
         },
         validatePassword() {
