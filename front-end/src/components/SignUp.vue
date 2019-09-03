@@ -14,7 +14,6 @@
                             id="fname"
                             placeholder="First Name"
                             @blur="validateFirstName"
-                            :class="{'correct': !alertForFirstName, 'error': alertForFirstName}"
                         />
                         <div
                             class="invalid-feedback"
