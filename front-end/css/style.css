@@ -16,7 +16,7 @@ body {
   color: darkslategray;
 }
 
-.container {
+.v-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,7 +39,7 @@ body {
   margin-top: 20px;
 }
 
-.row {
+.v-row {
   margin: 20px;
 }
 
@@ -59,18 +59,18 @@ form h2 {
   }
 }
 
-.form-group {
+.v-form-group {
   margin: 20px;
 }
 
-.form-group input {
+.v-form-group input {
   width: -webkit-fill-available;
   margin-top: 10px;
   padding: 10px;
 }
 
 @media (max-width: 40em) {
-  .form-group {
+  .v-form-group {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -82,7 +82,7 @@ form h2 {
 .signUp {
   margin: 20px;
   background-color: #47cf73;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
   line-height: 1.2;
@@ -92,12 +92,13 @@ form h2 {
   padding: 10px 16px;
   border-radius: 4px;
   border: 3px solid transparent;
+  text-transform: uppercase;
 }
 
 .logIn {
   margin: 20px;
   background-color: #47cf73;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
   line-height: 1.2;
@@ -107,6 +108,7 @@ form h2 {
   padding: 10px 16px;
   border-radius: 4px;
   border: 3px solid transparent;
+  text-transform: uppercase;
 }
 
 .login {
@@ -136,9 +138,10 @@ form h2 {
   border-radius: 4px;
   border: 3px solid transparent;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
-.invalid-feedback {
+.v-invalid-feedback {
   color: red;
   font-size: 12px;
   margin-top: 5px;

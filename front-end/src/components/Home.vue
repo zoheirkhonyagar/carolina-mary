@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="container">
-            <div class="row">
+        <div class="v-container">
+            <div class="v-row">
                 <h1>The Home Page</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aut autem, blanditiis consequuntur
