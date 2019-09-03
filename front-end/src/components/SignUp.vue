@@ -174,8 +174,12 @@ export default {
 
             if (!re.test(fname.value)) {
                 this.alertForFirstName = true;
+                fname.classList.remove("correct");
+                fname.classList.add("error");
             } else {
-                this.alertForFirstName = false;
+                this.alertForLastName = false;
+                fname.classList.remove("error");
+                fname.classList.add("correct");
             }
         },
         validateLastName() {
