@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="v-container">
-            <div class="v-row">
+        <div class="main">
+            <div class="content">
                 <h1>Log In</h1>
                 <form>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Username</label>
                         <br />
                         <input
@@ -14,7 +14,7 @@
                             placeholder="Username"
                         />
                     </div>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Password</label>
                         <br />
                         <input

@@ -2,11 +2,86 @@ a,
 ul {
   list-style: none;
   text-decoration: none;
-  color: blue;
+  color: snow;
 }
 
 li {
-  padding-right: 10px;
+  padding-right: 20px;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+blockquote,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+a,
+ul,
+li,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
 }
 
 body {
@@ -16,7 +91,7 @@ body {
   color: darkslategray;
 }
 
-.v-container {
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +103,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
+  margin: 30px auto;
   width: 90%;
 }
 
@@ -36,10 +111,23 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 20px;
+  background-color: #7a7c83;
+  padding: 16px 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.v-row {
+.nav__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content {
   margin: 20px;
 }
 
@@ -59,18 +147,18 @@ form h2 {
   }
 }
 
-.v-form-group {
+.form__section {
   margin: 20px;
 }
 
-.v-form-group input {
+.form__section input {
   width: -webkit-fill-available;
   margin-top: 10px;
   padding: 10px;
 }
 
 @media (max-width: 40em) {
-  .v-form-group {
+  .form__section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -141,7 +229,7 @@ form h2 {
   text-transform: uppercase;
 }
 
-.v-invalid-feedback {
+.invalid-feedback {
   color: red;
   font-size: 12px;
   margin-top: 5px;

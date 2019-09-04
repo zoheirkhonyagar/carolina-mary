@@ -5,11 +5,41 @@
             <router-view></router-view>
         </transition>
         <router-view name="header-bottom"></router-view>
+        <div>
+            <router-link v-if="authenticated" to="/login" @click.native="logout()" replace>Log Out</router-link>
+        </div>
+        <!-- <router-view @authenticated="setAuthenticated"></router-view> -->
     </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+
+export default {
+    name: "App",
+    data() {
+        return {
+            authenticated: false,
+            mochAccount: {
+                username: "123456789",
+                password: "123456789"
+            }
+        };
+    },
+    mounted() {
+        if (!this.authenticated) {
+            this.$router.replace({ name: "login" });
+        }
+    },
+    methods: {
+        setAuthenticated(status) {
+            this.authenticated = status;
+        },
+        logout() {
+            this.authenticated = false;
+        }
+    }
+};
 </script>
 
 <style>

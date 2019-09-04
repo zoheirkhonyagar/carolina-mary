@@ -1,111 +1,111 @@
 <template>
     <div>
-        <div class="v-container">
-            <div class="v-row">
+        <div class="main">
+            <div class="content">
                 <h1>Sign up</h1>
                 <form>
                     <h2>User Form</h2>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>First Name</label>
                         <br />
                         <input
                             type="text"
-                            class="v-form-control"
+                            class="form__control"
                             id="fname"
                             placeholder="First Name"
                             @blur="validateFirstName"
                         />
                         <div
-                            class="v-invalid-feedback"
+                            class="invalid-feedback"
                             v-if="alertForFirstName"
                         >Fisrt Name must beetween 2 and 15 characters</div>
                     </div>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Last Name</label>
                         <br />
                         <input
                             type="text"
-                            class="v-form-control"
+                            class="form__control"
                             id="lname"
                             placeholder="Last Name"
                             @blur="validateLastName"
                         />
                         <div
-                            class="v-invalid-feedback"
+                            class="invalid-feedback"
                             v-if="alertForLastName"
                         >Last Name must beetween 2 and 20 characters</div>
                     </div>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Email</label>
                         <br />
                         <input
                             type="email"
-                            class="v-form-control"
+                            class="form__control"
                             id="email"
                             placeholder="example@test.com"
                             @blur="validateEmail"
                         />
-                        <div class="v-invalid-feedback" v-if="alertForMail">Enter a valid email</div>
+                        <div class="invalid-feedback" v-if="alertForMail">Enter a valid email</div>
                     </div>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Username</label>
                         <br />
                         <input
                             type="username"
-                            class="v-form-control"
+                            class="form__control"
                             id="username"
                             placeholder="Username"
                             @blur="validateUser"
                         />
                         <div
-                            class="v-invalid-feedback"
+                            class="invalid-feedback"
                             v-if="alertForUser"
                         >Choose a username beetween 8 and 15 characters</div>
                     </div>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Password</label>
                         <br />
                         <input
                             type="Password"
-                            class="v-form-control"
+                            class="form__control"
                             id="password"
                             placeholder="********"
                             @blur="validatePassword"
                         />
                         <div
-                            class="v-invalid-feedback"
+                            class="invalid-feedback"
                             v-if="alertForPassword"
                         >Password must beetween 8 and 15 characters</div>
                     </div>
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Confirm Password</label>
                         <br />
                         <input
                             type="Password"
-                            class="v-form-control"
+                            class="form__control"
                             id="cpassword"
                             placeholder="********"
                             @blur="validateConfirmPassword"
                         />
                         <div
-                            class="v-invalid-feedback"
+                            class="invalid-feedback"
                             v-if="alertForConfirmPassword"
                         >Password does not match</div>
                     </div>
 
-                    <div class="v-form-group">
+                    <div class="form__section">
                         <label>Age</label>
                         <br />
                         <input
                             type="number"
-                            class="v-form-control"
+                            class="form__control"
                             id="age"
                             placeholder="Age"
                             @blur="validateAge"
                         />
-                        <div class="v-invalid-feedback" v-if="alertForAge">Please fill this field</div>
+                        <div class="invalid-feedback" v-if="alertForAge">Please fill this field</div>
                     </div>
-                    <div class="v-row">
+                    <div class="content">
                         <label>Gender</label>
                         <br />
                         <label for="male">
@@ -115,7 +115,7 @@
                             <input type="radio" id="female" value="Female" v-model="gender" /> Female
                         </label>
                     </div>
-                    <div class="v-row">
+                    <div class="content">
                         <input type="checkbox" name="terms" />
                         <label>I agree to the Terms and Conditions</label>
                     </div>
@@ -124,7 +124,7 @@
                         <h5>Already have an account?</h5>
                         <a class="login__item" href="home">Log In</a>
                     </div>
-                    <div class="v-row">
+                    <div class="content">
                         We already have that email registered. Have you
                         <a
                             href="#"
@@ -153,7 +153,6 @@ export default {
             },
             gender: "",
             alertForFirstName: false,
-            fillFirstName: false,
             alertForLastName: false,
             alertForMail: false,
             alertForUser: false,
@@ -177,7 +176,7 @@ export default {
                 fname.classList.remove("correct");
                 fname.classList.add("error");
             } else {
-                this.alertForLastName = false;
+                this.alertForFirstName = false;
                 fname.classList.remove("error");
                 fname.classList.add("correct");
             }
