@@ -8,10 +8,6 @@
                 </router-link>
             </div>
             <div class="nav__section users">
-                <router-link to="/user" tag="li" active-class="active">
-                    <i class="fa fa-user"></i>
-                    <a>User</a>
-                </router-link>
                 <router-link to="/signup" tag="li" active-class="active">
                     <i class="fa fa-user-plus"></i>
                     <a>Sign up</a>
