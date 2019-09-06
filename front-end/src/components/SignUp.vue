@@ -113,7 +113,6 @@
                     </div>
                     <div class="submit">
                         <button
-                            value="SignUp"
                             type="submit"
                             class="signUp"
                             href="#"
