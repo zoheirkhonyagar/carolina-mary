@@ -12,3 +12,9 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+.content {
+    height: 100vh;
+}
+</style>
