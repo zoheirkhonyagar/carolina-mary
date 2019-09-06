@@ -70,130 +70,126 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
+  margin: 0;
 }
 
 body {
-	font: {
-		family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
-			Sans-Serif;
-		size: map-get($map: $fonts, $key: bg);
-	}
-	@include colors(
-		$bg: darken(map-get($colors, bgBaseForm), $amount: 5%),
-		$text: map-get($colors, mainText)
-	);
+  font: {
+    family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+    size: map-get($map: $fonts, $key: bg);
+  }
+  @include colors(
+    $bg: darken(map-get($colors, bgBaseForm), $amount: 5%),
+    $text: map-get($colors, mainText)
+  );
 }
 
 .main {
-	@include flex-container();
-	margin: 30px auto;
-	width: 90%;
+  @include flex-container();
+  margin: 70px auto;
+  width: 90%;
 }
 
 .nav {
-	display: flex;
-	background-color: #7a7c83;
-	padding: 16px 30px;
-	justify-content: space-between;
-}
+  display: flex;
+  background-color: #444857;
+  padding: 16px 30px;
+  justify-content: space-between;
+  position: fixed;
+  width: -webkit-fill-available;
+  top: 0;
 
-.nav__section {
-	display: flex;
-	align-items: center;
+  &__section {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .content {
-	margin: $margin;
+  margin: $margin;
 }
 
 form {
-	padding: 20px;
-	@include colors(
-		$bg: map-get($colors, bgBaseForm),
-		$text: map-get($colors, textBaseForm)
-	);
-	h2 {
-		text-align: center;
-	}
-	@media (min-width: 35em) {
-		width: 500px;
-	}
+  padding: 20px;
+  @include colors(
+    $bg: map-get($colors, bgBaseForm),
+    $text: map-get($colors, textBaseForm)
+  );
+  h2 {
+    text-align: center;
+  }
+  @media (min-width: 35em) {
+    width: 500px;
+  }
 }
 
 .form__section {
-	margin: $margin;
-	input {
-		width: -webkit-fill-available;
-		margin-top: 10px;
-		padding: 10px;
-	}
+  margin: $margin;
+  input {
+    width: -webkit-fill-available;
+    margin-top: 10px;
+    padding: 10px;
+  }
 
-	@media (max-width: 40em) {
-		display: flex;
-		flex-wrap: wrap;
-	}
+  @media (max-width: 40em) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .signUp {
-	margin: $margin;
-	@include colors($bg: #47cf73, $text: #ffffff);
-	cursor: pointer;
-	font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
-		Sans-Serif;
-	line-height: 1.2;
-	display: inline-flex;
-	padding: 10px 16px;
-	border-radius: 4px;
-	border: 3px solid transparent;
-	text-transform: uppercase;
+  margin: $margin;
+  @include colors($bg: #47cf73, $text: #ffffff);
+  cursor: pointer;
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+    Sans-Serif;
+  line-height: 1.2;
+  display: inline-flex;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 3px solid transparent;
+  text-transform: uppercase;
 }
 
 .logIn {
-	margin: $margin;
-	@include colors($bg: #47cf73, $text: #ffffff);
-	cursor: pointer;
-	font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
-		Sans-Serif;
-	line-height: 1.2;
-	display: inline-flex;
-	padding: 10px 16px;
-	border-radius: 4px;
-	border: 3px solid transparent;
-	text-transform: uppercase;
+  margin: $margin;
+  @include colors($bg: #47cf73, $text: #ffffff);
+  cursor: pointer;
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+    Sans-Serif;
+  line-height: 1.2;
+  display: inline-flex;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 3px solid transparent;
+  text-transform: uppercase;
 }
 
 .login {
-	margin: $margin;
-	@include flex-container(flex, wrap, space-around, center);
+  margin: $margin;
+  @include flex-container(flex, wrap, space-around, center);
 
-	.login__item {
-		margin: $margin;
-		@include colors($bg: #444857, $text: #ffffff);
-		font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
-			Sans-Serif;
-		line-height: 1.2;
-		display: inline-flex;
-		padding: 10px 16px;
-		border-radius: 4px;
-		border: 3px solid transparent;
-		cursor: pointer;
-		text-transform: uppercase;
-	}
+  .login__item {
+    margin: $margin;
+    @include colors($bg: #444857, $text: #ffffff);
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,
+      Sans-Serif;
+    line-height: 1.2;
+    display: inline-flex;
+    padding: 10px 16px;
+    border-radius: 4px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #521751;
+      color: white;
+    }
+  }
 }
 
 .invalid-feedback {
-	@include colors($text: red);
-	font-size: map-get($map: $fonts, $key: alert);
-	margin-top: 5px;
-}
-
-.error {
-	color: map-get($map: $colors, $key: error);
-	border: 1px solid map-get($map: $colors, $key: error);
-}
-
-.correct {
-	color: map-get($map: $colors, $key: correct);
-	border: 1px solid map-get($map: $colors, $key: correct);
+  @include colors($text: red);
+  font-size: map-get($map: $fonts, $key: alert);
+  margin-top: 5px;
 }

@@ -3,7 +3,7 @@
         <div class="main">
             <div class="content">
                 <h1>Log In</h1>
-                <form>
+                <form @submit.prevent="onSubmit">
                     <div class="form__section">
                         <label>Username</label>
                         <br />
@@ -24,7 +24,9 @@
                             placeholder="Password"
                         />
                     </div>
-                    <a value="LogIn" class="logIn" href="#" @click="login()">Login</a>
+                    <div class="submit">
+                        <a type="submit" value="LogIn" class="logIn" href="#">Login</a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -43,20 +45,12 @@ export default {
         };
     },
     methods: {
-        login() {
-            if (this.input.username !== "" && this.input.password !== "") {
-                if (
-                    this.input.username == this.$parent.mockAccount.username &&
-                    this.input.password == this.$parent.mockAccount.password
-                ) {
-                    this.input.$emit("authenticated", true);
-                    this.$router.replace({ name: "secure" });
-                } else {
-                    console.log("The username and / or password is incorrect");
-                    //     } else {
-                    //         console.log("A username and password must be present");
-                }
-            }
+        onSubmit() {
+            const formData = {
+                email: this.input.username,
+                password: this.input.password
+            };
+            console.log(formData);
         }
     }
 };

@@ -3,107 +3,91 @@
         <div class="main">
             <div class="content">
                 <h1>Sign up</h1>
-                <form>
-                    <h2>User Form</h2>
-                    <div class="form__section">
-                        <label>First Name</label>
-                        <br />
+                <form @submit.prevent="onSubmit">
+                    <div class="input" :class="{invalid: $v.firstName.$error}">
+                        <label for="firstName">First Name</label>
                         <input
                             type="text"
-                            class="form__control"
-                            id="fname"
-                            placeholder="First Name"
-                            @blur="validateFirstName"
+                            id="firstName"
+                            @blur="$v.firstName.$touch()"
+                            v-model.trim="$v.firstName.$model"
                         />
-                        <div
-                            class="invalid-feedback"
-                            v-if="alertForFirstName"
-                        >Fisrt Name must beetween 2 and 15 characters</div>
+                        <p
+                            class="invalid"
+                            v-if="!$v.firstName.required"
+                        >This field must not be empty.</p>
                     </div>
-                    <div class="form__section">
-                        <label>Last Name</label>
-                        <br />
+                    <div class="input" :class="{invalid: $v.lastName.$error}">
+                        <label for="lastName">Last Name</label>
                         <input
                             type="text"
-                            class="form__control"
-                            id="lname"
-                            placeholder="Last Name"
-                            @blur="validateLastName"
+                            id="lastName"
+                            @blur="$v.lastName.$touch()"
+                            v-model="lastName"
                         />
-                        <div
-                            class="invalid-feedback"
-                            v-if="alertForLastName"
-                        >Last Name must beetween 2 and 20 characters</div>
+                        <p
+                            class="invalid"
+                            v-if="!$v.lastName.required"
+                        >This field must not be empty.</p>
                     </div>
-                    <div class="form__section">
-                        <label>Email</label>
-                        <br />
+                    <div class="input" :class="{invalid: $v.username.$error}">
+                        <label for="username">Username</label>
                         <input
-                            type="email"
-                            class="form__control"
-                            id="email"
-                            placeholder="example@test.com"
-                            @blur="validateEmail"
-                        />
-                        <div class="invalid-feedback" v-if="alertForMail">Enter a valid email</div>
-                    </div>
-                    <div class="form__section">
-                        <label>Username</label>
-                        <br />
-                        <input
-                            type="username"
-                            class="form__control"
+                            type="text"
                             id="username"
-                            placeholder="Username"
-                            @blur="validateUser"
+                            @blur="$v.username.$touch()"
+                            v-model="username"
                         />
-                        <div
-                            class="invalid-feedback"
-                            v-if="alertForUser"
-                        >Choose a username beetween 8 and 15 characters</div>
+                        <p
+                            v-if="!$v.username.minLen"
+                        >username must have at least {{$v.username.$params.minLen.min}} letters</p>
+                        <p v-if="!$v.username.required">This field must not be empty.</p>
                     </div>
-                    <div class="form__section">
-                        <label>Password</label>
-                        <br />
+                    <div class="input" :class="{invalid: $v.email.$error}">
+                        <label for="email">Mail</label>
+                        <input type="email" id="email" @blur="$v.email.$touch()" v-model="email" />
+                        <p v-if="!$v.email.email">Please provide a valid email address.</p>
+                        <p v-if="!$v.email.required">This field must not be empty.</p>
+                    </div>
+                    <div class="input" :class="{invalid: $v.age.$error}">
+                        <label for="age">Your Age</label>
+                        <input type="number" id="age" @blur="$v.age.$touch()" v-model.number="age" />
+                        <p
+                            v-if="!$v.age.minVal"
+                        >You have to be at least {{ $v.age.$params.minVal.min }} years old.</p>
+                    </div>
+                    <div class="input" :class="{invalid: $v.password.$error}">
+                        <label for="password">Password</label>
                         <input
-                            type="Password"
-                            class="form__control"
+                            type="password"
                             id="password"
-                            placeholder="********"
-                            @blur="validatePassword"
+                            @blur="$v.password.$touch()"
+                            v-model="password"
                         />
-                        <div
-                            class="invalid-feedback"
-                            v-if="alertForPassword"
-                        >Password must beetween 8 and 15 characters</div>
+                        <p class="invalid" v-if="!$v.password.required">Password is required.</p>
+                        <p
+                            class="invalid"
+                            v-if="!$v.password.minLen"
+                        >Password must have at least {{ $v.password.$params.minLen.min }} letters.</p>
                     </div>
-                    <div class="form__section">
-                        <label>Confirm Password</label>
-                        <br />
+                    <div class="input" :class="{invalid: $v.confirmPassword.$error}">
+                        <label for="confirmPassword">Confirm Password</label>
                         <input
-                            type="Password"
-                            class="form__control"
-                            id="cpassword"
-                            placeholder="********"
-                            @blur="validateConfirmPassword"
+                            type="password"
+                            id="confirmPassword"
+                            @blur="$v.confirmPassword.$touch()"
+                            v-model="confirmPassword"
                         />
-                        <div
-                            class="invalid-feedback"
-                            v-if="alertForConfirmPassword"
-                        >Password does not match</div>
+                        <p v-if="!$v.confirmPassword.sameAs">Passwords must be identical.</p>
                     </div>
-
-                    <div class="form__section">
-                        <label>Age</label>
-                        <br />
-                        <input
-                            type="number"
-                            class="form__control"
-                            id="age"
-                            placeholder="Age"
-                            @blur="validateAge"
-                        />
-                        <div class="invalid-feedback" v-if="alertForAge">Please fill this field</div>
+                    <div class="input">
+                        <label for="country">Country</label>
+                        <select id="country" v-model="country">
+                            <option value="usa">USA</option>
+                            <option value="india">India</option>
+                            <option value="uk">UK</option>
+                            <option value="germany">Germany</option>
+                        </select>
                     </div>
                     <div class="content">
                         <label>Gender</label>
@@ -116,10 +100,25 @@
                         </label>
                     </div>
                     <div class="content">
-                        <input type="checkbox" name="terms" />
-                        <label>I agree to the Terms and Conditions</label>
+                        <div class="input inline term" :class="{invalid: $v.terms.$invalid}">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                @change="$v.terms.$touch()"
+                                v-model="terms"
+                            />
+                            <label for="terms">I agree to the Terms and Conditions</label>
+                        </div>
                     </div>
-                    <a value="SignUp" class="signUp" href="#">Sign Up</a>
+                    <div class="submit">
+                        <button
+                            value="SignUp"
+                            type="submit"
+                            class="signUp"
+                            href="#"
+                            :disabled="$v.$invalid"
+                        >Sign Up</button>
+                    </div>
                     <div class="login">
                         <h5>Already have an account?</h5>
                         <a class="login__item" href="home">Log In</a>
@@ -133,140 +132,166 @@
                 </form>
             </div>
         </div>
-        <!-- <hr /> -->
-        <!-- <button class="btn btn-primary" @click="navigateToHome">Go To Home</button> -->
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import {
+    required,
+    email,
+    numeric,
+    minValue,
+    minLength,
+    between,
+    sameAs
+} from "vuelidate/lib/validators";
 export default {
+    name: "SignUp",
     data() {
         return {
-            userData: {
-                fname: "",
-                lname: "",
-                email: "",
-                username: "",
-                password: "",
-                age: ""
-            },
-            gender: "",
-            alertForFirstName: false,
-            alertForLastName: false,
-            alertForMail: false,
-            alertForUser: false,
-            alertForPassword: false,
-            alertForConfirmPassword: false,
-            alertForAge: false,
-            attachCorrect: false,
-            attachError: false
+            firstName: "",
+            lastName: "",
+            username: "",
+            email: "",
+            age: null,
+            password: "",
+            confirmPassword: "",
+            gender: [],
+            country: "usa",
+            terms: false
         };
     },
+    validations: {
+        firstName: {
+            required
+        },
+        lastName: {
+            required
+        },
+        username: {
+            required,
+            minLen: minLength(6)
+        },
+        email: {
+            required,
+            email
+        },
+        age: {
+            required,
+            numeric,
+            minVal: minValue(18)
+        },
+        password: {
+            required,
+            minLen: minLength(8)
+        },
+        confirmPassword: {
+            // sameAs: sameAs('password')
+            sameAs: sameAs(vm => {
+                return vm.password;
+            })
+        },
+        gender: {
+            required
+        },
+        terms: {
+            required
+        }
+    },
     methods: {
-        // navigateToHome() {
-        //     this.$router.push({ name: "home" });
-        // },
-        validateFirstName() {
-            const fname = document.getElementById("fname");
-            const re = /^[a-zA-Z]{2,15}$/;
-
-            if (!re.test(fname.value)) {
-                this.alertForFirstName = true;
-                fname.classList.remove("correct");
-                fname.classList.add("error");
-            } else {
-                this.alertForFirstName = false;
-                fname.classList.remove("error");
-                fname.classList.add("correct");
-            }
-        },
-        validateLastName() {
-            const lname = document.getElementById("lname");
-            const re = /^[a-zA-Z]{2,20}$/;
-
-            if (!re.test(lname.value)) {
-                this.alertForLastName = true;
-                lname.classList.remove("correct");
-                lname.classList.add("error");
-            } else {
-                this.alertForLastName = false;
-                lname.classList.remove("error");
-                lname.classList.add("correct");
-            }
-        },
-        validateEmail() {
-            const email = document.getElementById("email");
-            const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-
-            if (!re.test(email.value)) {
-                this.alertForMail = true;
-                email.classList.remove("correct");
-                email.classList.add("error");
-            } else {
-                this.alertForMail = false;
-                email.classList.remove("error");
-                email.classList.add("correct");
-            }
-        },
-        validateUser() {
-            const user = document.getElementById("username");
-            const re = /^[a-zA-Z0-9]{8,15}$/;
-
-            if (!re.test(user.value)) {
-                this.alertForUser = true;
-                user.classList.remove("correct");
-                user.classList.add("error");
-            } else {
-                this.alertForUser = false;
-                user.classList.remove("error");
-                user.classList.add("correct");
-            }
-        },
-        validatePassword() {
-            const password = document.getElementById("password");
-            const re = /^[a-zA-Z0-9]{8,15}$/;
-
-            if (!re.test(password.value)) {
-                this.alertForPassword = true;
-                password.classList.remove("correct");
-                password.classList.add("error");
-            } else {
-                this.alertForPassword = false;
-                password.classList.remove("error");
-                password.classList.add("correct");
-            }
-        },
-        validateConfirmPassword() {
-            const password = document.getElementById("password");
-            const cpassword = document.getElementById("cpassword");
-
-            if (password.value !== cpassword.value || cpassword.value === "") {
-                this.alertForConfirmPassword = true;
-                cpassword.classList.remove("correct");
-                cpassword.classList.add("error");
-            } else {
-                this.alertForConfirmPassword = false;
-                cpassword.classList.remove("error");
-                cpassword.classList.add("correct");
-            }
-        },
-        validateAge() {
-            const age = document.getElementById("age");
-
-            if (age.value === "") {
-                this.alertForAge = true;
-                age.classList.remove("correct");
-                age.classList.add("error");
-            } else {
-                this.alertForAge = false;
-                age.classList.remove("error");
-                age.classList.add("correct");
-            }
+        onSubmit() {
+            const formData = {
+                firstName: this.firstName,
+                lastName: this.lastName,
+                username: this.username,
+                email: this.email,
+                age: this.age,
+                password: this.password,
+                confirmPassword: this.confirmPassword,
+                country: this.country,
+                gender: this.gender,
+                terms: this.terms
+            };
+            alert("SUCCESS! :-)\n\n" + JSON.stringify(formData));
         }
     }
 };
 </script>
 
-<style>
+<style scoped>
+.input {
+    margin: 10px 20px;
+}
+
+.input label {
+    display: block;
+    color: #4e4e4e;
+    margin-bottom: 6px;
+}
+
+.input.inline label {
+    display: inline;
+}
+
+.input input {
+    font: inherit;
+    width: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.input.inline input {
+    width: auto;
+}
+
+.input input:focus {
+    outline: none;
+    border: 1px solid #521751;
+    background-color: #eee;
+}
+
+.input.inline.term {
+    margin: 0;
+}
+
+.input.invalid {
+    color: red;
+}
+
+.input.invalid label {
+    color: red;
+}
+
+.input.invalid input {
+    border: 1px solid red;
+    background-color: #ffc9aa;
+}
+
+.input select {
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+.submit button {
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.submit button:hover,
+.submit button:active {
+    background-color: #521751;
+    color: white;
+}
+
+.submit button[disabled],
+.submit button[disabled]:hover,
+.submit button[disabled]:active {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #ccc;
+    cursor: not-allowed;
+}
 </style>
