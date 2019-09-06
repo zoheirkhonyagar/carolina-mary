@@ -145,12 +145,6 @@
                             <a class="log__item">Log in</a>
                         </router-link>
                     </div>
-                    <div class="content">
-                        We already have that email registered. Have you
-                        <a
-                            href="#"
-                        >forgotten your password?</a>
-                    </div>
                 </form>
             </div>
         </div>
