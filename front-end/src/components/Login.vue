@@ -21,7 +21,7 @@
                             type="password"
                             name="password"
                             v-model="input.password"
-                            placeholder="Password"
+                            placeholder="**********"
                         />
                     </div>
                     <div class="submit">
