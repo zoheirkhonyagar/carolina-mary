@@ -9,6 +9,7 @@
                         <input
                             type="text"
                             id="firstName"
+                            placeholder="First Name"
                             @blur="$v.firstName.$touch()"
                             v-model.trim="$v.firstName.$model"
                         />
@@ -22,6 +23,7 @@
                         <input
                             type="text"
                             id="lastName"
+                            placeholder="Last Name"
                             @blur="$v.lastName.$touch()"
                             v-model="lastName"
                         />
@@ -35,6 +37,7 @@
                         <input
                             type="text"
                             id="username"
+                            placeholder="Username"
                             @blur="$v.username.$touch()"
                             v-model="username"
                         />
@@ -45,13 +48,25 @@
                     </div>
                     <div class="form__section input" :class="{invalid: $v.email.$error}">
                         <label for="email">Mail</label>
-                        <input type="email" id="email" @blur="$v.email.$touch()" v-model="email" />
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="example@test.com"
+                            @blur="$v.email.$touch()"
+                            v-model="email"
+                        />
                         <p v-if="!$v.email.email">Please provide a valid email address.</p>
                         <p v-if="!$v.email.required">This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.age.$error}">
                         <label for="age">Age</label>
-                        <input type="number" id="age" @blur="$v.age.$touch()" v-model.number="age" />
+                        <input
+                            type="number"
+                            id="age"
+                            placeholder="20"
+                            @blur="$v.age.$touch()"
+                            v-model.number="age"
+                        />
                         <p
                             v-if="!$v.age.minVal"
                         >You have to be at least {{ $v.age.$params.minVal.min }} years old.</p>
@@ -62,6 +77,7 @@
                         <input
                             type="password"
                             id="password"
+                            placeholder="**********"
                             @blur="$v.password.$touch()"
                             v-model="password"
                         />
@@ -76,6 +92,7 @@
                         <input
                             type="password"
                             id="confirmPassword"
+                            placeholder="**********"
                             @blur="$v.confirmPassword.$touch()"
                             v-model="confirmPassword"
                         />
