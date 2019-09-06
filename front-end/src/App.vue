@@ -10,6 +10,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import SignUp from "./components/SignUp.vue";
 
 export default {
     name: "App"

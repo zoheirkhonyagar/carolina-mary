@@ -141,7 +141,9 @@
                     </div>
                     <div class="login">
                         <h5>Already have an account?</h5>
-                        <a class="login__item" href="home">Log In</a>
+                        <router-link to="./Login">
+                            <a class="login__item">Log In</a>
+                        </router-link>
                     </div>
                     <div class="content">
                         We already have that email registered. Have you
