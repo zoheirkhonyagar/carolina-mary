@@ -137,12 +137,12 @@
                             class="signUp"
                             href="#"
                             :disabled="$v.$invalid"
-                        >Sign Up</button>
+                        >Sign up</button>
                     </div>
-                    <div class="login">
+                    <div class="log">
                         <h5>Already have an account?</h5>
                         <router-link to="./Login">
-                            <a class="login__item">Log In</a>
+                            <a class="log__item">Log in</a>
                         </router-link>
                     </div>
                     <div class="content">

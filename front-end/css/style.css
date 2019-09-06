@@ -200,7 +200,7 @@ form h2 {
   text-transform: uppercase;
 }
 
-.logIn {
+.login {
   margin: 20px;
   background-color: #47cf73;
   color: #ffffff;
@@ -216,7 +216,7 @@ form h2 {
   text-transform: uppercase;
 }
 
-.login {
+.log {
   margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,7 +230,7 @@ form h2 {
           align-items: center;
 }
 
-.login .login__item {
+.log__item {
   margin: 20px;
   background-color: #444857;
   color: #ffffff;

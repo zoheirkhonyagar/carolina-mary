@@ -163,7 +163,7 @@ form {
   text-transform: uppercase;
 }
 
-.logIn {
+.login {
   margin: $margin;
   @include colors($bg: #47cf73, $text: #ffffff);
   cursor: pointer;
@@ -177,11 +177,11 @@ form {
   text-transform: uppercase;
 }
 
-.login {
+.log {
   margin: $margin;
   @include flex-container(flex, wrap, space-around, center);
 
-  .login__item {
+  &__item {
     margin: $margin;
     @include colors($bg: #444857, $text: #ffffff);
     font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma,

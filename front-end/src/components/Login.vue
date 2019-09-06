@@ -25,7 +25,13 @@
                         />
                     </div>
                     <div class="submit">
-                        <button type="submit" class="logIn" href="#">Log In</button>
+                        <button type="submit" class="login" href="#">Log In</button>
+                    </div>
+                    <div class="log">
+                        <h5>Don't have an account?</h5>
+                        <router-link to="./SignUp">
+                            <a class="log__item">Sign up</a>
+                        </router-link>
                     </div>
                 </form>
             </div>
