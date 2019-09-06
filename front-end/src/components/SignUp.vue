@@ -139,10 +139,10 @@
                             :disabled="$v.$invalid"
                         >Sign up</button>
                     </div>
-                    <div class="log">
+                    <div class="submit log">
                         <h5>Already have an account?</h5>
                         <router-link to="./Login">
-                            <a class="log__item">Log in</a>
+                            <button class="log__item">Log in</button>
                         </router-link>
                     </div>
                 </form>
@@ -235,7 +235,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .form__section {
     margin: 20px;
 }
@@ -247,44 +247,37 @@ export default {
 
 .input.invalid {
     color: red;
-}
-
-.input.invalid label {
-    color: red;
-}
-
-.input.invalid input {
-    border: 1px solid red;
-    background-color: #ffc9aa;
+    label {
+        color: red;
+    }
+    input {
+        border: 1px solid red;
+        background-color: #ffc9aa;
+    }
 }
 
 .submit button {
-    padding: 10px 20px;
-    font: inherit;
     cursor: pointer;
-}
-
-.submit button:hover,
-.submit button:active {
-    background-color: #521751;
-    color: white;
-}
-
-.submit button[disabled],
-.submit button[disabled]:hover,
-.submit button[disabled]:active {
-    border: 1px solid #ccc;
-    background-color: transparent;
-    color: #ccc;
-    cursor: not-allowed;
+    &:hover,
+    :active {
+        background-color: #521751;
+        color: white;
+    }
+    &[disabled],
+    [disabled]:hover,
+    [disabled]:active {
+        border: 1px solid #ccc;
+        background-color: transparent;
+        color: #ccc;
+        cursor: not-allowed;
+    }
 }
 
 .gender {
     display: flex;
-}
-
-.gender__item {
-    display: flex;
-    margin-right: 6px;
+    &__item {
+        display: flex;
+        margin-right: 6px;
+    }
 }
 </style>

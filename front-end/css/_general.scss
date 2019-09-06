@@ -194,4 +194,9 @@ form {
     cursor: pointer;
     text-transform: uppercase;
   }
+  button:hover,
+  button:active {
+    background-color: #521751;
+    color: white;
+  }
 }

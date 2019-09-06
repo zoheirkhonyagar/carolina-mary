@@ -27,10 +27,10 @@
                     <div class="submit">
                         <button type="submit" class="login" href="#">Log In</button>
                     </div>
-                    <div class="log">
+                    <div class="submit log">
                         <h5>Don't have an account?</h5>
                         <router-link to="./SignUp">
-                            <a class="log__item">Sign up</a>
+                            <button class="log__item">Sign up</button>
                         </router-link>
                     </div>
                     <div class="content">
@@ -67,3 +67,13 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.submit button {
+    &:hover,
+    :active {
+        background-color: #521751;
+        color: white;
+    }
+}
+</style>

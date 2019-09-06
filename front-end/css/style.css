@@ -245,4 +245,10 @@ form h2 {
   cursor: pointer;
   text-transform: uppercase;
 }
+
+.log button:hover,
+.log button:active {
+  background-color: #521751;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
