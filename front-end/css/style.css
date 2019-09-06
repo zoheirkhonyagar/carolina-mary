@@ -162,6 +162,12 @@ form h2 {
   padding: 10px;
 }
 
+.form__section input:focus {
+  outline: none;
+  border: 1px solid #521751;
+  background-color: #eee;
+}
+
 @media (max-width: 40em) {
   .form__section {
     display: -webkit-box;

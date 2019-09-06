@@ -130,6 +130,11 @@ form {
     width: -webkit-fill-available;
     margin-top: 10px;
     padding: 10px;
+    &:focus {
+      outline: none;
+      border: 1px solid #521751;
+      background-color: #eee;
+    }
   }
 
   @media (max-width: 40em) {

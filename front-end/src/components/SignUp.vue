@@ -254,22 +254,8 @@ export default {
     display: inline;
 }
 
-.input input {
-    font: inherit;
-    width: 100%;
-    padding: 6px 12px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-}
-
 .input.inline input {
     width: auto;
-}
-
-.input input:focus {
-    outline: none;
-    border: 1px solid #521751;
-    background-color: #eee;
 }
 
 .input.inline.term {
