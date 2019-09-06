@@ -50,7 +50,7 @@
                         <p v-if="!$v.email.required">This field must not be empty.</p>
                     </div>
                     <div class="input" :class="{invalid: $v.age.$error}">
-                        <label for="age">Your Age</label>
+                        <label for="age">Age</label>
                         <input type="number" id="age" @blur="$v.age.$touch()" v-model.number="age" />
                         <p
                             v-if="!$v.age.minVal"
