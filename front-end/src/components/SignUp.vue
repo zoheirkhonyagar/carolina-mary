@@ -254,6 +254,7 @@ export default {
 
 .input.inline.term {
     margin: 0;
+    display: flex;
 }
 
 .input.invalid {
