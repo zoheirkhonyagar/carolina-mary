@@ -100,11 +100,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   margin: 70px auto;
   width: 90%;
+  height: 100vh;
 }
 
 .nav {
@@ -117,7 +118,9 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: fixed;
+  width: -moz-available;
   width: -webkit-fill-available;
+  width: fill-available;
   top: 0;
 }
 
@@ -157,7 +160,9 @@ form h2 {
 }
 
 .form__section input {
+  width: -moz-available;
   width: -webkit-fill-available;
+  width: fill-available;
   margin-top: 10px;
   padding: 10px;
 }

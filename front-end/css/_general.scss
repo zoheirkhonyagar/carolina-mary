@@ -85,9 +85,10 @@ body {
 }
 
 .main {
-  @include flex-container();
+  @include flex-container($align: start);
   margin: 70px auto;
   width: 90%;
+  height: 100vh;
 }
 
 .nav {
@@ -96,7 +97,9 @@ body {
   padding: 16px 30px;
   justify-content: space-between;
   position: fixed;
+  width: -moz-available;
   width: -webkit-fill-available;
+  width: fill-available;
   top: 0;
 
   &__section {
@@ -127,7 +130,9 @@ form {
 .form__section {
   margin: $margin;
   input {
+    width: -moz-available;
     width: -webkit-fill-available;
+    width: fill-available;
     margin-top: 10px;
     padding: 10px;
     &:focus {
