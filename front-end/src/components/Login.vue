@@ -47,7 +47,7 @@ export default {
     methods: {
         onSubmit() {
             const formData = {
-                email: this.input.username,
+                username: this.input.username,
                 password: this.input.password
             };
             console.log(formData);
