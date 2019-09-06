@@ -246,12 +246,13 @@ export default {
 }
 
 .input.invalid {
-    color: red;
+    $alertColor: red;
+    color: $alertColor;
     label {
-        color: red;
+        color: $alertColor;
     }
     input {
-        border: 1px solid red;
+        border: 1px solid $alertColor;
         background-color: #ffc9aa;
     }
 }
