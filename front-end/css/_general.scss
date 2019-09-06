@@ -88,6 +88,7 @@ body {
   @include flex-container();
   margin: 70px auto;
   width: 90%;
+  height: 100vh;
 }
 
 .nav {
