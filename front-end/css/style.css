@@ -2,7 +2,7 @@ a,
 ul {
   list-style: none;
   text-decoration: none;
-  color: #00ff70;
+  color: royalblue;
 }
 
 li {
@@ -112,11 +112,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #444857;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+  z-index: 1;
+  -webkit-transition: height 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
   padding: 16px 30px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: fixed;
+  padding: 16px 30px;
+  justify-content: space-between;
   position: fixed;
   width: -moz-available;
   width: -webkit-fill-available;
