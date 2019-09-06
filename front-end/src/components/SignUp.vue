@@ -55,6 +55,7 @@
                         <p
                             v-if="!$v.age.minVal"
                         >You have to be at least {{ $v.age.$params.minVal.min }} years old.</p>
+                        <p v-if="!$v.age.required">This field must not be empty.</p>
                     </div>
                     <div class="input" :class="{invalid: $v.password.$error}">
                         <label for="password">Password</label>
