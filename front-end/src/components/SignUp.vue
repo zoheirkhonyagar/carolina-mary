@@ -226,6 +226,7 @@ export default {
 .form__section {
     margin: 20px;
 }
+
 .input label {
     display: block;
     color: #4e4e4e;
