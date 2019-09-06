@@ -14,7 +14,7 @@
                 </router-link>
                 <router-link to="/login" tag="li" active-class="active">
                     <i class="fa fa-sign-in"></i>
-                    <a>Log In</a>
+                    <a>Log in</a>
                 </router-link>
             </div>
         </ul>

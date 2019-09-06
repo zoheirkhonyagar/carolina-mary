@@ -2,7 +2,7 @@
     <div>
         <div class="main">
             <div class="content">
-                <h1>Log In</h1>
+                <h1>Log in</h1>
                 <form @submit.prevent="onSubmit">
                     <div class="form__section">
                         <label>Username</label>
@@ -25,7 +25,7 @@
                         />
                     </div>
                     <div class="submit">
-                        <button type="submit" class="logIn" href="#">Login</button>
+                        <button type="submit" class="logIn" href="#">Log In</button>
                     </div>
                 </form>
             </div>
