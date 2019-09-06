@@ -4,7 +4,7 @@
             <div class="content">
                 <h1>Sign up</h1>
                 <form @submit.prevent="onSubmit">
-                    <div class="input" :class="{invalid: $v.firstName.$error}">
+                    <div class="form__section input" :class="{invalid: $v.firstName.$error}">
                         <label for="firstName">First Name</label>
                         <input
                             type="text"
@@ -17,7 +17,7 @@
                             v-if="!$v.firstName.required"
                         >This field must not be empty.</p>
                     </div>
-                    <div class="input" :class="{invalid: $v.lastName.$error}">
+                    <div class="form__section input" :class="{invalid: $v.lastName.$error}">
                         <label for="lastName">Last Name</label>
                         <input
                             type="text"
@@ -30,7 +30,7 @@
                             v-if="!$v.lastName.required"
                         >This field must not be empty.</p>
                     </div>
-                    <div class="input" :class="{invalid: $v.username.$error}">
+                    <div class="form__section input" :class="{invalid: $v.username.$error}">
                         <label for="username">Username</label>
                         <input
                             type="text"
@@ -43,13 +43,13 @@
                         >username must have at least {{$v.username.$params.minLen.min}} letters</p>
                         <p v-if="!$v.username.required">This field must not be empty.</p>
                     </div>
-                    <div class="input" :class="{invalid: $v.email.$error}">
+                    <div class="form__section input" :class="{invalid: $v.email.$error}">
                         <label for="email">Mail</label>
                         <input type="email" id="email" @blur="$v.email.$touch()" v-model="email" />
                         <p v-if="!$v.email.email">Please provide a valid email address.</p>
                         <p v-if="!$v.email.required">This field must not be empty.</p>
                     </div>
-                    <div class="input" :class="{invalid: $v.age.$error}">
+                    <div class="form__section input" :class="{invalid: $v.age.$error}">
                         <label for="age">Age</label>
                         <input type="number" id="age" @blur="$v.age.$touch()" v-model.number="age" />
                         <p
@@ -57,7 +57,7 @@
                         >You have to be at least {{ $v.age.$params.minVal.min }} years old.</p>
                         <p v-if="!$v.age.required">This field must not be empty.</p>
                     </div>
-                    <div class="input" :class="{invalid: $v.password.$error}">
+                    <div class="form__section input" :class="{invalid: $v.password.$error}">
                         <label for="password">Password</label>
                         <input
                             type="password"
@@ -71,7 +71,7 @@
                             v-if="!$v.password.minLen"
                         >Password must have at least {{ $v.password.$params.minLen.min }} letters.</p>
                     </div>
-                    <div class="input" :class="{invalid: $v.confirmPassword.$error}">
+                    <div class="form__section input" :class="{invalid: $v.confirmPassword.$error}">
                         <label for="confirmPassword">Confirm Password</label>
                         <input
                             type="password"
@@ -81,7 +81,7 @@
                         />
                         <p v-if="!$v.confirmPassword.sameAs">Passwords must be identical.</p>
                     </div>
-                    <div class="input">
+                    <div class="form__section input">
                         <label for="country">Country</label>
                         <select id="country" v-model="country">
                             <option value="usa">USA</option>
@@ -223,10 +223,9 @@ export default {
 </script>
 
 <style scoped>
-.input {
-    margin: 10px 20px;
+.form__section {
+    margin: 20px;
 }
-
 .input label {
     display: block;
     color: #4e4e4e;

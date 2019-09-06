@@ -136,6 +136,8 @@ body {
 
 form {
   padding: 20px;
+  -webkit-box-shadow: 1px 1px 3px;
+          box-shadow: 1px 1px 3px;
   background-color: #ffffff;
   color: darkslategray;
 }
@@ -230,11 +232,6 @@ form h2 {
   border: 3px solid transparent;
   cursor: pointer;
   text-transform: uppercase;
-}
-
-.login .login__item:hover {
-  background-color: #521751;
-  color: white;
 }
 
 .invalid-feedback {
