@@ -244,20 +244,6 @@ export default {
     margin: 20px;
 }
 
-.input label {
-    display: block;
-    color: #4e4e4e;
-    margin-bottom: 6px;
-}
-
-.input.inline label {
-    display: inline;
-}
-
-.input.inline input {
-    width: auto;
-}
-
 .input.inline.term {
     margin: 0;
     display: flex;
@@ -274,11 +260,6 @@ export default {
 .input.invalid input {
     border: 1px solid red;
     background-color: #ffc9aa;
-}
-
-.input select {
-    border: 1px solid #ccc;
-    font: inherit;
 }
 
 .submit button {
