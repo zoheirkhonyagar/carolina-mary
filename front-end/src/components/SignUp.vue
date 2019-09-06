@@ -40,7 +40,7 @@
                         />
                         <p
                             v-if="!$v.username.minLen"
-                        >username must have at least {{$v.username.$params.minLen.min}} letters</p>
+                        >username must have at least {{$v.username.$params.minLen.min}} letters.</p>
                         <p v-if="!$v.username.required">This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.email.$error}">
