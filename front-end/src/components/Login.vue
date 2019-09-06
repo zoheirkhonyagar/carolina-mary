@@ -25,7 +25,7 @@
                         />
                     </div>
                     <div class="submit">
-                        <a type="submit" value="LogIn" class="logIn" href="#">Login</a>
+                        <button type="submit" class="logIn" href="#">Login</button>
                     </div>
                 </form>
             </div>
