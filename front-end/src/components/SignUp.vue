@@ -92,13 +92,16 @@
                     </div>
                     <div class="content">
                         <label>Gender</label>
-                        <br />
-                        <label for="male">
-                            <input type="radio" id="male" value="Male" v-model="gender" /> Male
-                        </label>
-                        <label for="female">
-                            <input type="radio" id="female" value="Female" v-model="gender" /> Female
-                        </label>
+                        <div class="gender">
+                            <div class="gender__item">
+                                <input type="radio" id="male" value="Male" v-model="gender" />
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="gender__item">
+                                <input type="radio" id="female" value="Female" v-model="gender" />
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="content">
                         <div class="input inline term" :class="{invalid: $v.terms.$invalid}">
@@ -294,5 +297,14 @@ export default {
     background-color: transparent;
     color: #ccc;
     cursor: not-allowed;
+}
+
+.gender {
+    display: flex;
+}
+
+.gender__item {
+    display: flex;
+    margin-right: 6px;
 }
 </style>
