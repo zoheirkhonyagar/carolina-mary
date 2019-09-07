@@ -236,10 +236,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form__section {
-    margin: 20px;
-}
-
 .input.inline.term {
     margin: 0;
     display: flex;

@@ -159,6 +159,7 @@ form h2 {
 }
 
 .form__section {
+  padding-bottom: 5px;
   margin: 20px;
 }
 
