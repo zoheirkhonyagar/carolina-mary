@@ -11,7 +11,7 @@
                             id="firstName"
                             placeholder="First Name"
                             @blur="$v.firstName.$touch()"
-                            v-model.trim="$v.firstName.$model"
+                            v-model="firstName"
                         />
                         <p
                             class="invalid"
