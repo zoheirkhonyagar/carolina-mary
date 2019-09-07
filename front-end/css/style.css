@@ -112,12 +112,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
-  padding: 16px 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+  padding: 16px 30px;
   position: fixed;
   width: -moz-available;
   width: -webkit-fill-available;
@@ -129,9 +134,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .content {
