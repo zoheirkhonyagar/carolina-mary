@@ -252,7 +252,8 @@ export default {
         color: $alertColor;
     }
     input {
-        border: 1px solid $alertColor;
+        border-style: none;
+        border-bottom: 1px solid $alertColor;
         background-color: #ffc9aa;
     }
 }

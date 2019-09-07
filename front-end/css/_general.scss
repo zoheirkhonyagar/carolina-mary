@@ -134,9 +134,12 @@ form {
     width: fill-available;
     margin-top: 10px;
     padding: 10px;
+    border-style: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     &:focus {
       outline: none;
-      border: 1px solid #521751;
+      border-style: none;
+      border-bottom: 1px solid #521751;
       background-color: #eee;
     }
   }
