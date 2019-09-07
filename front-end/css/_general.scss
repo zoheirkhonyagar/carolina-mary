@@ -143,6 +143,12 @@ form {
       border-bottom: 1px solid #521751;
       background-color: #eee;
     }
+    &:-internal-autofill-selected {
+      to {
+        background-color: rgb(232, 240, 254) !important;
+        color: rgb(0, 0, 0) !important;
+      }
+    }
   }
 
   @media (max-width: 40em) {
