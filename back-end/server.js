@@ -8,11 +8,16 @@ const app = express();
 app.use(bodyParser.json());
 
 // define routes
-
 app.post('/users', (req, res) => {
   let newUser = new User({
     email: req.body.email,
-    age: req.body.age
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    username: req.body.username,
+    age: req.body.age,
+    password: req.body.password,
+    country: req.body.country,
+    gender: req.body.gender
   });
 
   newUser.save().then(
