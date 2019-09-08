@@ -1,10 +1,11 @@
 const mongooose = require('mongoose');
-
 const User = mongooose.model('Users', {
   email: {
     type: String,
+    required: true,
     trim: true,
-    minlength: 1
+    minlength: 1,
+    unique: true
   },
   firstName: {
     type: String,
@@ -19,7 +20,8 @@ const User = mongooose.model('Users', {
   username: {
     type: String,
     trim: true,
-    minlength: 3
+    minlength: 3,
+    unique: true
   },
   age: {
     type: Number,
