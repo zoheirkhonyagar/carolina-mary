@@ -18,9 +18,9 @@ export default {
 
 <style>
 .slide-leave-active {
-    transition: opacity 1s ease;
+    transition: opacity 0.5s ease;
     opacity: 0;
-    animation: slide-out 1s ease-out forwards;
+    animation: slide-out 0.75s ease-out forwards;
 }
 
 .slide-leave {
@@ -29,7 +29,7 @@ export default {
 }
 
 .slide-enter-active {
-    animation: slide-in 1s ease-out forwards;
+    animation: slide-in 0.6s ease-out forwards;
 }
 
 @keyframes slide-out {

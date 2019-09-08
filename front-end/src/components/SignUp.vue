@@ -15,7 +15,7 @@
                         />
                         <p
                             class="invalid"
-                            v-if="!$v.firstName.required"
+                            v-if="!$v.firstName.required && $v.firstName.$dirty"
                         >This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.lastName.$error}">
@@ -29,7 +29,7 @@
                         />
                         <p
                             class="invalid"
-                            v-if="!$v.lastName.required"
+                            v-if="!$v.lastName.required && $v.lastName.$dirty"
                         >This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.username.$error}">
@@ -44,11 +44,14 @@
                         <p
                             v-if="!$v.username.minLen"
                         >username must have at least {{$v.username.$params.minLen.min}} letters.</p>
-                        <p v-if="!$v.username.required">This field must not be empty.</p>
+                        <p
+                            v-if="!$v.username.required && $v.username.$dirty"
+                        >This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.email.$error}">
                         <label for="email">Mail</label>
                         <input
+                            prepend-icon="email"
                             type="email"
                             id="email"
                             placeholder="example@test.com"
@@ -56,7 +59,9 @@
                             v-model="email"
                         />
                         <p v-if="!$v.email.email">Please provide a valid email address.</p>
-                        <p v-if="!$v.email.required">This field must not be empty.</p>
+                        <p
+                            v-if="!$v.email.required && $v.email.$dirty"
+                        >This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.age.$error}">
                         <label for="age">Age</label>
@@ -70,18 +75,22 @@
                         <p
                             v-if="!$v.age.minVal"
                         >You have to be at least {{ $v.age.$params.minVal.min }} years old.</p>
-                        <p v-if="!$v.age.required">This field must not be empty.</p>
+                        <p v-if="!$v.age.required && $v.age.$dirty">This field must not be empty.</p>
                     </div>
                     <div class="form__section input" :class="{invalid: $v.password.$error}">
                         <label for="password">Password</label>
                         <input
+                            prepend-icon="lock"
                             type="password"
                             id="password"
                             placeholder="**********"
                             @blur="$v.password.$touch()"
                             v-model="password"
                         />
-                        <p class="invalid" v-if="!$v.password.required">Password is required.</p>
+                        <p
+                            class="invalid"
+                            v-if="!$v.password.required && $v.password.$dirty"
+                        >Password is required.</p>
                         <p
                             class="invalid"
                             v-if="!$v.password.minLen"

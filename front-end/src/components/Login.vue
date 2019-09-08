@@ -10,8 +10,8 @@
                         <input
                             type="text"
                             name="username"
-                            v-model="input.username"
                             placeholder="Username"
+                            v-model="username"
                         />
                     </div>
                     <div class="form__section">
@@ -20,8 +20,8 @@
                         <input
                             type="password"
                             name="password"
-                            v-model="input.password"
                             placeholder="**********"
+                            v-model="password"
                         />
                     </div>
                     <div class="submit">
@@ -50,30 +50,18 @@ export default {
     name: "Login",
     data() {
         return {
-            input: {
-                username: "",
-                password: ""
-            }
+            username: "",
+            password: ""
         };
     },
     methods: {
         onSubmit() {
             const formData = {
-                username: this.input.username,
-                password: this.input.password
+                username: this.username,
+                password: this.password
             };
             console.log(formData);
         }
     }
 };
 </script>
-
-<style lang="scss" scoped>
-.submit button {
-    &:hover,
-    :active {
-        background-color: #521751;
-        color: white;
-    }
-}
-</style>
