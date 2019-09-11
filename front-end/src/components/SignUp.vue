@@ -63,20 +63,6 @@
                             v-if="!$v.email.required && $v.email.$dirty"
                         >This field must not be empty.</p>
                     </div>
-                    <div class="form__section input" :class="{invalid: $v.age.$error}">
-                        <label for="age">Age</label>
-                        <input
-                            type="number"
-                            id="age"
-                            placeholder="20"
-                            @blur="$v.age.$touch()"
-                            v-model.number="age"
-                        />
-                        <p
-                            v-if="!$v.age.minVal"
-                        >You have to be at least {{ $v.age.$params.minVal.min }} years old.</p>
-                        <p v-if="!$v.age.required && $v.age.$dirty">This field must not be empty.</p>
-                    </div>
                     <div class="form__section input" :class="{invalid: $v.password.$error}">
                         <label for="password">Password</label>
                         <input
@@ -107,34 +93,14 @@
                         />
                         <p v-if="!$v.confirmPassword.sameAs">Passwords must be identical.</p>
                     </div>
-                    <div class="form__section input">
-                        <label for="country">Country</label>
-                        <select id="country" v-model="country">
-                            <option value="usa">USA</option>
-                            <option value="india">India</option>
-                            <option value="uk">UK</option>
-                            <option value="germany">Germany</option>
-                        </select>
-                    </div>
                     <div class="content">
-                        <label>Gender</label>
-                        <div class="gender">
-                            <div class="gender__item">
-                                <input type="radio" id="male" value="Male" v-model="gender" />
-                                <label for="male">Male</label>
-                            </div>
-                            <div class="gender__item">
-                                <input type="radio" id="female" value="Female" v-model="gender" />
-                                <label for="female">Female</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="input inline term" :class="{invalid: $v.terms.$invalid}">
+                        <div class="input inline term">
                             <input
                                 type="checkbox"
                                 id="terms"
+                                required
                                 @change="$v.terms.$touch()"
+                                @blur="$v.terms.$touch()"
                                 v-model="terms"
                             />
                             <label for="terms">I agree to the Terms and Conditions</label>
@@ -179,11 +145,8 @@ export default {
             lastName: "",
             username: "",
             email: "",
-            age: null,
             password: "",
             confirmPassword: "",
-            gender: [],
-            country: "usa",
             terms: false
         };
     },
@@ -202,11 +165,7 @@ export default {
             required,
             email
         },
-        age: {
-            required,
-            numeric,
-            minVal: minValue(18)
-        },
+
         password: {
             required,
             minLen: minLength(8)
@@ -217,11 +176,10 @@ export default {
                 return vm.password;
             })
         },
-        gender: {
-            required
-        },
         terms: {
-            required
+            checked(val) {
+                return val;
+            }
         }
     },
     methods: {
@@ -231,14 +189,18 @@ export default {
                 lastName: this.lastName,
                 username: this.username,
                 email: this.email,
-                age: this.age,
                 password: this.password,
                 confirmPassword: this.confirmPassword,
-                country: this.country,
-                gender: this.gender,
                 terms: this.terms
             };
-            alert("SUCCESS! :-)\n\n" + JSON.stringify(formData));
+            this.$http.post("https://localhost:3000/users", this.formData).then(
+                response => {
+                    this.$router.push({ name: "home" });
+                },
+                error => {
+                    console.log(error);
+                }
+            );
         }
     }
 };

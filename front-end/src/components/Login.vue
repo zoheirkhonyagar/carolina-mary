@@ -60,7 +60,14 @@ export default {
                 username: this.username,
                 password: this.password
             };
-            console.log(formData);
+            this.$http.post("https://localhost:3000/users", this.formData).then(
+                response => {
+                    this.$router.push({ name: "home" });
+                },
+                error => {
+                    console.log(error);
+                }
+            );
         }
     }
 };
