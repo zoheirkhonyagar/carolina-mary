@@ -193,14 +193,16 @@ export default {
                 confirmPassword: this.confirmPassword,
                 terms: this.terms
             };
-            this.$http.post("https://localhost:3000/users", this.formData).then(
-                response => {
+            this.$http.post("http://localhost:3000", this.formData).then(res => {
+                if (res.data.length) {
+                    localStorage.setItem("username", JSON.stringify(formData));
                     this.$router.push({ name: "home" });
-                },
-                error => {
-                    console.log(error);
+                } else {
+                    error => {
+                        console.log(error);
+                    };
                 }
-            );
+            });
         }
     }
 };
